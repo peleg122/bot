@@ -6,7 +6,6 @@ import raven from 'raven';
 let client = {
   captureError: (err, options) => {
     if (options.tags && options.tags.source && !err.source) err.source = options.tags.source;
-    console.log(err);
     logger.error(err.stack || err.message || err);
   }
 };
@@ -29,6 +28,7 @@ if (nconf.get('NODE_ENV') === 'production' && nconf.get('SENTRY_DSN')) {
 }
 
 export default function captureError(err, source) {
+  console.log(err);
   if (!(err instanceof Error)) err = new Error(err);
 
   const options = {
