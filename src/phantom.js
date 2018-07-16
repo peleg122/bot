@@ -23,6 +23,7 @@ if (process.env.DEBUG && R.contains(process.env.DEBUG.indexOf('horseman') > -1))
 }
 
 function createHorseman() {
+  return;
   logger.info('Starting horseman/phantomjs');
 
   if (horseman) horseman.close();
