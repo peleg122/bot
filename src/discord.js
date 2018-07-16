@@ -87,8 +87,15 @@ function callCmd(cmd, name, client, evt, suffix) {
 }
 
 function onMessage(evt) {
-  if (!evt.message) return;
-  if (client.User.id === evt.message.author.id) return;
+  logger.info("received message");
+  if (!evt.message) {
+    logger.info("ignoring empty message event");
+    return;
+  }
+  if (client.User.id === evt.message.author.id) {
+    logger.info("ignoring bot message");
+    return;
+  }
 
   // Checks for PREFIX
   if (evt.message.content[0] === nconf.get('PREFIX')) {
