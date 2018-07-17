@@ -27,8 +27,13 @@ function issueCommand(client, evt, suffix, lang) {
           body = response.body || {};
     var msg = body.msg;
 
-    if (code !== 200 && !msg) {
-      msg = "there was an error when communicating with Parsec. Please try again later";
+    if (code !== 200) {
+      if (!msg) {
+        msg = body.err || body.error;
+      }
+      if (!msg) {
+        msg = "there was an error when communicating with Parsec. Please try again later";
+      }
     }
     return msg;
   });
