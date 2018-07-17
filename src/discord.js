@@ -148,6 +148,7 @@ function connect() {
   }
 
   client.connect({token: nconf.get('TOKEN')});
+  R.apply(logger.info, Object.keys(commands));
 }
 
 function forceFetchUsers() {
