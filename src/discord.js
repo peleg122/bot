@@ -104,6 +104,7 @@ function onMessage(evt) {
     const cmd = commands[command];
 
     if (cmd) callCmd(cmd, command, client, evt, suffix);
+    else logger.info("no match for command: " + command);
     return;
   }
 
