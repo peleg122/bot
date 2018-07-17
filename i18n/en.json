@@ -179,5 +179,6 @@
   "youtube": "Gets a video from Youtube matching the given tags",
   "youtube_error": "I couldn't find a video for",
   "youtube_setup": "Please setup `YOUTUBE_KEY` in config.js to use the **`!youtube`** command.",
-  "youtube_usage": "Usage: **`!youtube`** `video tags`"
+  "youtube_usage": "Usage: **`!youtube`** `video tags`",
+  "parsec": "Usage: **`!parsec`** `command`"
 }
