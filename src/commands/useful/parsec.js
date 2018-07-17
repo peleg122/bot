@@ -22,8 +22,14 @@ function issueCommand(client, evt, suffix, lang) {
   };
 
   return request(options).then(response => {
-    const body = response.body;
-    return body.msg;
+    const code = response.statusCode,
+          body = response.body || {};
+    var msg = body.msg;
+
+    if (code !== 200 && !msg) {
+      msg = "there was an error when communicating with Parsec. Please try again later";
+    }
+    return msg;
   });
 }
 
