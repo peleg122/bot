@@ -32,6 +32,7 @@ if (!process.env.TEST) {
         if (!categories[category]) return logger.warn(`${command} does not have a category. It will not be added to the help information.`);
 
         categories[category].push(command);
+        logger.info("loaded command: " + command);
         help_parameters[command] = help_data[command];
       }, R.keys(help_data));
     }
