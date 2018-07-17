@@ -646,5 +646,25 @@
   "youtube_usage": {
     "text": "Usage: **`!youtube`** `video tags`",
     "done": true
+  },
+  "parsec": {
+    "text": "Usage: **`!parsec`** `command`",
+    "done": true
+  },
+  "parsec_setup": {
+    "text": "Parsec not set up",
+    "done": true
+  },
+  "parsec_start": {
+    "text": "Start your parsec cloud server",
+    "done": true
+  },
+  "parsec_stop": {
+    "text": "Stop your parsec cloud server",
+    "done": true
+  },
+  "parsec_me": {
+    "text": "Shows your parsec user",
+    "done": true
   }
 }

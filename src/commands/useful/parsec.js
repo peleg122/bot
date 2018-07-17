@@ -3,11 +3,12 @@ import nconf from 'nconf';
 import R from 'ramda';
 import _request from 'request';
 
+import T from '../../translate';
 
 const request = Promise.promisify(_request);
 
 function issueCommand(client, evt, suffix, lang) {
-  if (!nconf.get('PARSEC_KEY') || !nconf.get("PARSEC_BOT_URL")) return Promise.resolve("Parsec Key not set up");
+  if (!nconf.get('PARSEC_KEY') || !nconf.get("PARSEC_BOT_URL")) return Promise.resolve(T('parsec_setup', lang));
   const split_suffix = suffix.split(' ');
   const cmd = split_suffix[0];
 
@@ -38,5 +39,18 @@ export default {
 };
 
 export const help = {
-  parsec: {},
+  parsec: {
+    prefix: false,
+    subcommands: [
+      {
+        name: "me"
+      },
+      {
+        name: "start"
+      },
+      {
+        stop: "stop"
+      }
+    ]
+  }
 };
