@@ -148,7 +148,6 @@ function connect() {
   }
 
   client.connect({token: nconf.get('TOKEN')});
-  R.apply(logger.info, Object.keys(commands));
 }
 
 function forceFetchUsers() {
@@ -192,6 +191,8 @@ export function start() {
       initialized = true;
       startExpress();
       initPhantom();
+      logger.info("Listing available commands");
+      R.apply(logger.info, Object.keys(commands));
 
       // Only the last shard does portal submissions on boot
       if (nconf.get('SHARDING')) {
