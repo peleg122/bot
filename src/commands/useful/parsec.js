@@ -15,6 +15,7 @@ function issueCommand(client, evt, suffix, lang) {
     url: nconf.get("PARSEC_BOT_URL"),
     method: 'GET',
     json: {
+      key: nconf.get('PARSEC_KEY'),
       discord_user_id: evt.message.author.id,
       cmd: cmd
     }
