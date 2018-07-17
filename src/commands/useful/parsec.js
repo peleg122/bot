@@ -24,11 +24,9 @@ function issueCommand(client, evt, suffix, lang) {
 }
 
 export default {
-  ping: issueCommand,
-  me: issueCommand,
+  parsec: issueCommand,
 };
 
 export const help = {
-  ping: {},
-  me: {}
+  parsec: {},
 };
