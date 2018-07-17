@@ -27,3 +27,8 @@ export default {
   ping: issueCommand,
   me: issueCommand,
 };
+
+export const help = {
+  ping: {},
+  me: {}
+};
