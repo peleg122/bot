@@ -21,7 +21,7 @@ function issueCommand(client, evt, suffix, lang) {
     }
   };
 
-  return request(options).then(R.prop('msg'), R.prop("error"));
+  return request(options).then(R.prop('msg'));
 }
 
 export default {
