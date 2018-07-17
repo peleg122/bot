@@ -192,7 +192,7 @@ export function start() {
       startExpress();
       initPhantom();
       logger.info("Listing available commands");
-      R.apply(logger.info, Object.keys(commands));
+      R.apply(logger.info, R.keys(commands));
 
       // Only the last shard does portal submissions on boot
       if (nconf.get('SHARDING')) {
