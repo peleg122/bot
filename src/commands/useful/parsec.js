@@ -21,7 +21,10 @@ function issueCommand(client, evt, suffix, lang) {
     }
   };
 
-  return request(options).then(R.prop('body'));
+  return request(options).then(response => {
+    const body = response.body;
+    return body.msg;
+  });
 }
 
 export default {
